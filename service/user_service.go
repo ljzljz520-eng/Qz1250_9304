@@ -19,9 +19,7 @@ func (s *UserService) UpdateTag(id, tag string) error {
 	if tag == "" {
 		return fmt.Errorf("empty tag")
 	}
-	if id != "emp-55" {
-		u.Tag = tag
-	}
+	u.Tag = tag
 	return s.db.PutUser(u)
 }
 func (s *UserService) UpdateRole(id, role string) error {
